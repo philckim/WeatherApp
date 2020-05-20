@@ -19,7 +19,7 @@ import com.philkim.ad340.details.ForecastDetailsFragment
 /**
  * A simple [Fragment] subclass.
  */
-class CurrentForecastFragment : Fragment() {
+class WeeklyForecastFragment : Fragment() {
 
     private val forecastRepository = ForecastRepository()
     private lateinit var tempDisplaySettingManager: TempDisplaySettingManager
@@ -29,7 +29,8 @@ class CurrentForecastFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_current_forecast, container, false)
+        val view = inflater.inflate(R.layout.fragment_weekly_forecast, container, false)
+
         val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
 
         tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
@@ -59,20 +60,21 @@ class CurrentForecastFragment : Fragment() {
     }
 
     private fun showLocationEntry() {
-        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToLocationEntryFragment()
+        val action = WeeklyForecastFragmentDirections.actionWeeklyForecastFragmentToLocationEntryFragment()
         findNavController().navigate(action)
     }
 
     private fun showForecastDetails(forecast: DailyForecast) {
-        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToForecastDetailsFragment(forecast.temp, forecast.description)
+        val action = WeeklyForecastFragmentDirections.actionWeeklyForecastFragmentToForecastDetailsFragment(forecast.temp, forecast.description)
         findNavController().navigate(action)
     }
 
     companion object {
         const val KEY_ZIPCODE = "key_zipcode"
 
-        fun newInstance(zipcode: String) : CurrentForecastFragment {
-            val fragment = CurrentForecastFragment()
+        fun newInstance(zipcode: String) : WeeklyForecastFragment {
+            val fragment = WeeklyForecastFragment()
+
             val args = Bundle()
             args.putString(KEY_ZIPCODE, zipcode)
             fragment.arguments = args
