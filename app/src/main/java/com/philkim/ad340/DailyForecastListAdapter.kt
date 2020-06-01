@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.philkim.ad340.api.DailyForecast
-import kotlinx.android.synthetic.main.fragment_location_entry.view.*
-import kotlinx.android.synthetic.main.item_daily_forecast.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,8 +18,7 @@ private val DATE_FORMAT = SimpleDateFormat("MM-dd-yyyy")
 class DailyForecastViewHolder(
     view: View,
     private val tempDisplaySettingManager: TempDisplaySettingManager
-    )
-    : RecyclerView.ViewHolder(view) {
+    ) : RecyclerView.ViewHolder(view) {
 
     private val tempText : TextView = view.findViewById(R.id.tempText)
     private val descriptionText : TextView = view.findViewById(R.id.descriptionText)

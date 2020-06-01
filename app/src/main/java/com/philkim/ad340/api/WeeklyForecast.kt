@@ -3,7 +3,6 @@ package com.philkim.ad340.api
 import com.squareup.moshi.Json
 
 data class WeatherDescription(val main: String, val description: String, val icon: String)
-
 data class Temp(val min: Float, val max: Float)
 
 data class DailyForecast(
