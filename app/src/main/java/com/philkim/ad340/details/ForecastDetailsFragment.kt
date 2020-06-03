@@ -26,7 +26,7 @@ class ForecastDetailsFragment : Fragment() {
         tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
 
         val tempText = layout.findViewById<TextView>(R.id.tempText)
-        val descriptionText = layout.findViewById<TextView>(R.id.desgit criptionText)
+        val descriptionText = layout.findViewById<TextView>(R.id.descriptionText)
         val dateText = layout.findViewById<TextView>(R.id.dateText)
         val forecastIcon = layout.findViewById<ImageView>(R.id.forecastIcon)
 
