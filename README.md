@@ -1,4 +1,3 @@
-# AD340
-Project code for AD 340 - 5210
+Weather App
 
-Phil Kim
+Developed using Kotlin via Android Studio
